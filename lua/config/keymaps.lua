@@ -8,6 +8,8 @@ local opts = {
 -- use <Space> to enter Ex mode
 vim.keymap.set('n', '<Space>', ':', opts)
 
--- use <Tab> and <S-Tab> to navigate through buffers
-vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
-vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
+if not vim.g.vscode then
+  -- use <Tab> and <S-Tab> to navigate through buffers
+  vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
+  vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
+end
